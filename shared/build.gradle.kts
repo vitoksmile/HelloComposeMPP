@@ -31,7 +31,9 @@ kotlin {
             isStatic = true
         }
     }
-    
+
+    jvm()
+
     sourceSets {
         val commonMain by getting {
             dependencies {
@@ -65,6 +67,12 @@ kotlin {
             iosX64Main.dependsOn(this)
             iosArm64Main.dependsOn(this)
             iosSimulatorArm64Main.dependsOn(this)
+        }
+        val jvmMain by getting {
+            dependsOn(commonMain)
+            dependencies {
+                api(compose.desktop.currentOs)
+            }
         }
     }
 }

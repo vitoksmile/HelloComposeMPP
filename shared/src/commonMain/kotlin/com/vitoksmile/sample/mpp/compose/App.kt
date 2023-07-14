@@ -4,6 +4,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material.Surface
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 
 @Composable
@@ -14,7 +15,8 @@ fun App(
         Surface(
             modifier = modifier.fillMaxSize(),
         ) {
-            Text(Greeting().greet())
+            val platform = remember { getPlatform() }
+            Text("Hello, ${platform.name}")
         }
     }
 }

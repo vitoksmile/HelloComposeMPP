@@ -16,4 +16,5 @@ dependencyResolutionManagement {
 
 rootProject.name = "Hello_Compose_MPP"
 include(":androidApp")
+include(":desktopApp")
 include(":shared")
